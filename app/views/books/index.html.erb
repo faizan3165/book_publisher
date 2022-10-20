@@ -1,0 +1,17 @@
+<%= turbo_stream_from "books" %>
+
+<main class="container">
+  <h1 class="display-4 text-center">All Books</h1>
+
+  <%= turbo_frame_tag "render_form" do %>
+
+    <div class="row justify-content-center">
+
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <%= turbo_frame_tag Book.new %>
+        <%= render @books %>
+      </div>
+
+    <% end %>
+  </div>
+</main>

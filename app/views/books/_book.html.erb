@@ -1,0 +1,33 @@
+<%= turbo_frame_tag book do %>
+  <div class="card my-5 rounded-lg shadow">
+    <img src=<%= book.image %> class="card-img-top rounded" alt="<%= book.name %>" >
+
+    <div class="card-body">
+      <h5 class="card-title">
+        <%= link_to book.name, 
+          book_path(book), 
+          data: {turbo_frame: "_top"} 
+        %>
+      </h5>
+
+      <p class="card-text">
+        <%= book.description %>
+      </p>
+    </div>
+
+    <% if book.user_id == current_user.id %>
+      <div class="card-body">
+        <%= link_to "Edit",
+        edit_book_path(book),
+        class: "btn btn-warning w-25" 
+      %>
+
+        <%= button_to "Delete",
+        book_path(book),
+        method: :delete,
+        class: "btn btn-danger" 
+      %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

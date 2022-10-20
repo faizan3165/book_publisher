@@ -1,0 +1,11 @@
+Rowling:
+  email: rowling@gmail.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+Paulo:
+  email: paulo@gmai.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+Sydney:
+  email: sydney@gmail.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>

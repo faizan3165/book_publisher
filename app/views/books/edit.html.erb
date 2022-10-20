@@ -1,0 +1,9 @@
+<main class="container">
+  <%= link_to sanitize("&larr; Back to books"), books_path %>
+
+  <h1 class="display-4 text-center">Edit Your Book Details</h1>
+
+  <%= turbo_frame_tag @book do %>
+    <%= render "form", book: @book %>
+  <% end %>
+</main>

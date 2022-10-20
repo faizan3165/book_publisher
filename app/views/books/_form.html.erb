@@ -1,0 +1,26 @@
+<div class="row my-3">
+  <div class="col-12">
+    <div class="card rounded shadow-lg">
+      <div class="card-body p-4">
+        <%= simple_form_for book do |f| %>
+          <% if book.errors.any? %>
+            <div class="alert alert-danger" role="alert">
+              <%= book.errors.full_messages.to_sentence.capitalize %>
+            </div>
+          <% end %>
+
+          <%= f.input :name, input_html: {autofocus: true, class: "my-3"} %>
+
+          <%= f.input :image, input_html: {autofocus: true, class: "my-3"} %>
+
+          <%= f.input :description, input_html: {autofocus: true, class: "my-3"} %>
+
+          <%= f.submit class: "btn btn-success my-3" %>
+
+          <%= link_to "Cancel", books_path, class: "btn btn-primary" %>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

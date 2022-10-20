@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="bg-dark text-white rounded shadow p-5 text-center">
+    <h1 class="display-4">
+      Welcome To Book Publisher
+    </h1>
+
+    <p>A blazing fast book publisher web app built with Hotwire</p>
+
+    <% if user_signed_in? %>
+      <%= link_to "View All Published Books", books_path, class: "btn btn-primary" %>
+    <% else %>
+      <%= link_to "Sign in", new_user_session_path, class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>
